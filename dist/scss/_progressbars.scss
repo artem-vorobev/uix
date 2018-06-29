@@ -1,0 +1,51 @@
+.progress { 
+    color: $mainFontColor;
+    margin: 0.5em 0;
+    height: 1.5em;
+    overflow: hidden;
+    background-color: $textInputColor;
+    border: 1px solid $defaultBorderColor;
+    border-radius: $mainBorderRadius;
+    display: block;
+    width: 100%;
+    @include progress-bar-bg($defaultBorderColor, 0.25);
+    background-size: auto 110%;
+    background-position: 0 50%;
+    background-repeat: repeat-x;
+}
+.progress > span {
+    display: block;
+    overflow: hidden;
+    height: 1.5em;
+    background-size: auto 110%;
+    background-position: 0 50%;
+    background-repeat: repeat-x;
+    transition: width 1s ease, background-color 1s ease;
+    text-align: center;
+}
+.progress.progress-primary > span {
+    background-color: $primaryColor;
+    color: contrast($primaryColor);
+    @include progress-bar-bg($primaryBorderColor, 0.5);
+}
+.progress.progress-success > span {
+    color: contrast($successColor);
+    background-color: $successColor;
+    @include progress-bar-bg($successBorderColor, 0.5);
+}
+.progress.progress-danger > span {
+    background-color: $dangerColor;
+    color: contrast($dangerColor);
+    @include progress-bar-bg($dangerBorderColor, 0.5);
+}
+.progress.animated > span {
+    animation: progressBarAnimation 1s ease infinite;
+}
+@keyframes progressBarAnimation {
+    0% {
+       background-position: 0 50%;
+    }
+    100% {
+       background-position: 3.3em 50%;
+    }
+}

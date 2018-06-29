@@ -1,0 +1,110 @@
+/**
+ * Uix frontend framework.
+ * Version: 1.0, last update 29.06.2018
+ * Author: Artem Vorobev <artem.v.mailbox@gmail.com>
+ */
+
+$deviceVariants: (
+    ('xs', 0, 100%),
+    ('sm', 544px, 576px),
+    ('md', 768px, 720px),
+    ('lg', 992px, 940px),
+    ('xl', 1200px, 1140px)
+);
+
+$splitVariants: (
+    '0':     0em,
+    '0-25':  0.25em,
+    '0-5':   0.5em,
+    '0-75':  0.75em,
+    '1':     1em,
+    '1-5':   1.5em,
+    '2':     2em,
+    '3':     3em,
+    '5':     5em,
+    '8':     8em
+);
+
+$columnNumber:      12;
+$mainFontSize:      14px;
+$mainFontFamily:    Arial, sans-serif;
+$mainBorderRadius:  2px;
+$hdrFontFamily:     inherit;
+$hdrFontWeight:     400;
+$hdrFontColor:      inherit;
+
+$isDark:            false;
+$bgColor:           #ffffff;
+$mainFontColor:     #555555;
+$contrastLight:     #ffffff;
+$contrastDark:      #000000;
+$primaryColor:      #0288D1;
+$successColor:      #00C853;
+$dangerColor:       #F44336;
+
+$checkMarksColor: $successColor;
+@if $isDark {
+    $bgHoverColor: lighten($bgColor, 3%) !global;
+    $textInputColor: lighten($bgColor, 3%) !global;
+    $defaultColor: lighten($bgColor, 5%) !global;
+
+    $defaultBorderColor: lighten($bgColor, 10%) !global;
+    $primaryBorderColor: lighten($primaryColor, 10%) !global;
+    $successBorderColor: lighten($successColor, 10%) !global;
+    $dangerBorderColor: lighten($dangerColor, 10%) !global;
+
+    $defaultHoverColor: lighten($defaultColor, 5%) !global;
+    $primaryHoverColor: lighten($primaryColor, 5%) !global;
+    $successHoverColor: lighten($successColor, 5%) !global;
+    $dangerHoverColor: lighten($dangerColor, 5%) !global;
+
+    $defaultActiveColor: darken($defaultColor, 5%) !global;
+    $primaryActiveColor: darken($primaryColor, 5%) !global;
+    $successActiveColor: darken($successColor, 5%) !global;
+    $dangerActiveColor: darken($dangerColor, 5%) !global;
+} @else {
+    $bgHoverColor: darken($bgColor, 3%) !global;
+    $textInputColor: darken($bgColor, 3%) !global;
+    $defaultColor: darken($bgColor, 5%) !global;
+
+    $defaultBorderColor: darken($defaultColor, 10%) !global;
+    $primaryBorderColor: darken($primaryColor, 10%) !global;
+    $successBorderColor: darken($successColor, 10%) !global;
+    $dangerBorderColor: darken($dangerColor, 10%) !global;
+
+    $defaultHoverColor: darken($defaultColor, 5%) !global;
+    $primaryHoverColor: darken($primaryColor, 5%) !global;
+    $successHoverColor: darken($successColor, 5%) !global;
+    $dangerHoverColor: darken($dangerColor, 5%) !global;
+
+    $defaultActiveColor: lighten($defaultColor, 5%) !global;
+    $primaryActiveColor: lighten($primaryColor, 5%) !global;
+    $successActiveColor: lighten($successColor, 5%) !global;
+    $dangerActiveColor: lighten($dangerColor, 5%) !global;
+}
+
+@function contrast($color) {
+    $avg: (red($color) + green($color) + blue($color))/3;
+    @return if($avg > 128, $contrastDark, $contrastLight);
+}
+
+@import "_reset.scss";
+@import "_grid.scss";
+@import "_svg.scss";
+
+@import "_cards.scss";
+@import "_chips.scss";
+@import "_fieldset-labels.scss";
+@import "_tabs.scss";
+@import "_buttons.scss";
+@import "_textfields.scss";
+@import "_progressbars.scss";
+@import "_input-groups.scss";
+@import "_checkboxes-radio.scss";
+@import "_disabled-elements.scss";
+@import "_modal-windows.scss";
+@import "_alerts.scss";
+@import "_pagination.scss";
+@import "_breadcrumbs.scss";
+@import "_dropdowns.scss";
+@import "_tables.scss";

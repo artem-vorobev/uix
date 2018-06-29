@@ -1,0 +1,20 @@
+.modal-wrap {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0 0 0 100vh rgba(0,0,0,0.3);
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    overflow-y: auto;
+}
+.modal {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5;
+    text-align: left;
+}

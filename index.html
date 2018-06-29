@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Uix framework test</title>
+    <link rel="stylesheet" href="dist/scss/uix.min.css">
+    <style>
+        .grid.example {
+            outline: 1px dashed #f00;
+            outline-offset: 0px;
+        }
+        .grid.example > .cell {
+            outline: 1px dashed #00f;
+            outline-offset: -1px;
+        }
+    </style>
+</head>
+<body>
+<div class="container ptb-2 prl-1">
+    <div class="alert alert-info">
+        This page is created for testing Uix library.
+    </div>
+
+    <h1 class="mt-2">Heading H1</h1>
+    <h2>Heading H2</h2>
+    <h3>Heading H3</h3>
+    <h4>Heading H4</h4>
+    <h5>Heading H5</h5>
+    <h6>Heading H6</h6>
+
+    <h2 class="mt-2">Cards</h2>
+    <div class="card mb-1">
+        <div class="card-header-big">
+            <h2 class="m-0">Big card</h2>
+        </div>
+        <div class="card-section">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illum nemo, molestiae, nesciunt provident distinctio! Qui ratione, porro, laudantium eveniet reprehenderit sint quia. Sapiente in dolor provident vitae ad fugit quos repellendus cum enim porro, voluptates debitis dignissimos distinctio laborum. Ab harum, praesentium at eos, minima sed illum error nesciunt accusamus sapiente. Ullam nam sint deleniti nulla ex quasi mollitia voluptatibus repellendus, qui magnam voluptate iure beatae, recusandae quaerat! Vero possimus natus, eveniet nobis, dolores ut omnis ipsam facere odit debitis ratione repellendus quisquam alias incidunt. Repellat architecto voluptatum provident sint, vel voluptatibus, nulla, officia asperiores accusamus dolor praesentium ad?
+        </div>
+    </div>
+    <div class="card mb-1 sm-6">
+        <div class="card-header">
+            <div class="modal-controls">
+                <button class="btn btn-primary btn-square">&times;</button>
+            </div>
+            <div class="modal-title">Small card with button</div>
+        </div>
+        <div class="card-section">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illum nemo, molestiae, nesciunt provident distinctio! Qui ratione, porro, laudantium eveniet reprehenderit sint quia. Sapiente in dolor provident vitae ad fugit quos repellendus cum enim porro, voluptates debitis dignissimos distinctio laborum. Ab harum, praesentium at eos, minima sed illum error nesciunt accusamus sapiente.
+        </div>
+    </div>
+
+    <h2 class="mt-2">Chips</h2>
+    <p>
+        <span class="chip chip-default"><strong class="chip-icon">1</strong> Default</span>
+        <span class="chip chip-primary"><strong class="chip-icon">2</strong> Primary</span>
+        <span class="chip chip-success"><strong class="chip-icon">3</strong> Success</span>
+        <span class="chip chip-danger"><strong class="chip-icon">4</strong> Danger</span>
+    </p>
+
+    <h2 class="mt-2">Buttons</h2>
+    <p>
+        Types:<br>
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-danger" disabled>Disabled</button>
+    </p>
+    <p>
+        Sizes:<br>
+        <button class="btn btn-default btn-lg">Large</button>
+        <button class="btn btn-primary">Normal</button>
+        <button class="btn btn-success btn-sm">Small</button>
+    </p>
+    <p>
+        Shapes:<br>
+        <button class="btn btn-default btn-lg btn-square">L</button>
+        <button class="btn btn-primary btn-square">M</button>
+        <button class="btn btn-success btn-sm btn-square">S</button>
+        <button class="btn btn-danger btn-lg btn-round">L</button>
+        <button class="btn btn-primary btn-round">M</button>
+        <button class="btn btn-success btn-sm btn-round">S</button>
+    </p>
+
+    <h2 class="mt-2">Tabs</h2>
+    <ul class="tabs tabs-default">
+        <li class="active">Tab 1</li>
+        <li>Tab 2</li>
+        <li>Tab 3</li>
+        <li>Tab 4</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laboriosam delectus nesciunt est suscipit explicabo eos animi nobis ad! Voluptate porro aut, architecto, perspiciatis in corporis alias nisi ea quo mollitia iusto, amet animi dolorum accusantium. Delectus illo eius, eaque, at doloremque magnam reprehenderit inventore rerum modi fugit assumenda maxime.</p>
+
+    <ul class="tabs tabs-primary">
+        <li class="active">Tab 1</li>
+        <li>Tab 2</li>
+        <li>Tab 3</li>
+        <li>Tab 4</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laboriosam delectus nesciunt est suscipit explicabo eos animi nobis ad! Voluptate porro aut, architecto, perspiciatis in corporis alias nisi ea quo mollitia iusto, amet animi dolorum accusantium. Delectus illo eius, eaque, at doloremque magnam reprehenderit inventore rerum modi fugit assumenda maxime.</p>
+
+    <h2 class="mt-2">Progress bars</h2>
+    <div class="progress progress-primary animated"><span style="width:33%">33%</span></div>
+    <div class="progress progress-success"><span style="width:100%">100%</span></div>
+    <div class="progress progress-danger"><span style="width:50%">ERROR!</span></div>
+
+    <h2 class="mt-2">Forms</h2>
+    <fieldset>
+        <legend><label><input hidden type="checkbox" name="c2"><span></span> Checkbox in legend of fieldset</label></legend>
+        <div class="grid split-1">
+            <label class="cell sm-4 lg-2">
+                Text input
+            </label>
+            <div class="cell sm-8 lg-10">
+                <input type="text" class="form-control" placeholder="Type something...">
+            </div>
+            <label class="cell sm-4 lg-2">
+                Disabled text input
+            </label>
+            <div class="cell sm-8 lg-10">
+                <input type="text" class="form-control" disabled>
+            </div>
+            <label class="cell sm-4 lg-2">
+                Select
+            </label>
+            <div class="cell sm-8 lg-10">
+                <select class="form-control">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+            </div>
+            <label class="cell sm-4 lg-2">
+                Textarea
+            </label>
+            <div class="cell sm-8 lg-10">
+                <textarea class="form-control"></textarea>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="radio" name="r1"><span></span> Radio</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="radio" name="r1" checked><span></span> Checked radio</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="radio" name="r1" disabled><span></span> Disabled radio</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="radio" name="r3" disabled checked><span></span> Disabled checked radio</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="checkbox" name="c1"><span></span> Checkbox</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="checkbox" name="c1" checked><span></span> Checked checkbox</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="checkbox" name="c1" disabled><span></span> Disabled checkbox</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="checkbox" name="c1" disabled checked><span></span> Disabled checked checkbox</label>
+            </div>
+    </fieldset>
+    <fieldset class="mt-1" disabled>
+        <legend>Disabled fieldset</legend>
+        <div class="grid split-1">
+            <label class="cell sm-4 lg-2">
+                Text input
+            </label>
+            <div class="cell sm-8 lg-10">
+                <input type="text" class="form-control" placeholder="Type something...">
+            </div>
+            <label class="cell sm-4 lg-2">
+                Select
+            </label>
+            <div class="cell sm-8 lg-10">
+                <select class="form-control">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+            </div>
+            <label class="cell sm-4 lg-2">
+                Textarea
+            </label>
+            <div class="cell sm-8 lg-10">
+                <textarea class="form-control"></textarea>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="radio" name="r2" checked><span></span> Radio</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="radio" name="r2"><span></span> Radio</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="checkbox" name="c2"><span></span> Checkbox</label>
+            </div>
+            <div class="cell hidden-xs sm-4 lg-2"></div>
+            <div class="cell sm-8 lg-10">
+                <label><input hidden type="checkbox" name="c2" checked><span></span> Checkbox</label>
+            </div>
+    </fieldset>
+
+    <h2 class="mt-2">Horizontal one-line form</h2>
+    <div class="one-line-form">
+        <label>First name</label>
+        <input type="text" class="form-control" value="Andy">
+        <label>Last name</label>
+        <input type="text" class="form-control" value="Warhall">
+        <input type="button" class="btn btn-default" value="Send">
+    </div>
+
+    <h2 class="mt-2">Group of inputs</h2>
+    <div class="input-group mb-1">
+        <input type="text" class="form-control" placeholder="First name">
+        <input type="text" class="form-control" placeholder="Last name">
+        <input type="button" class="btn btn-default" value="Send">
+    </div>
+    <div class="input-group mb-1">
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-danger" disabled>Disabled</button>
+    </div>
+
+    <h2 class="mt-2">Alerts</h2>
+    <div class="alert alert-primary mb-1">Primary</div>
+    <div class="alert alert-success mb-1">Success</div>
+    <div class="alert alert-danger mb-1">Danger</div>
+    <div class="alert alert-primary mb-1">
+        With close button
+        <button class="btn btn-primary btn-sm btn-square alert-control">&times;</button>
+    </div>
+
+    <h2 class="mt-2">Modals</h2>
+    <button class="btn btn-primary" onclick="Uix.appear({target:'#modal1'})">
+        Single modal
+    </button>
+    <button class="btn btn-success" onclick="Uix.toggleAppearance({target:0, group:'.step-modals', animation:'ltr'})">
+        Group of modals
+    </button>
+
+    <div class="modal-wrap hidden" id="modal1">
+        <div class="modal xs-12 sm-8 md-6 lg-4 xl-3">
+            <div class="card">
+                <div class="card-header">
+                    Modal header
+                </div>
+                <div class="card-section">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, perferendis eos nihil. Deleniti accusamus, vero incidunt voluptatem omnis cumque officiis a. Ad nihil facere sint, ipsum quo doloribus accusamus reiciendis nulla dolorum temporibus, eligendi esse enim voluptate, ab placeat fuga. Deserunt saepe incidunt unde sunt odio dicta recusandae rerum repellat, atque accusamus ut aut vel cum dolorem minima, officia, esse delectus odit ratione, laboriosam maxime debitis. Nemo, natus, provident. Illum, vitae quidem accusamus, voluptatum soluta hic nulla repellendus ullam pariatur odio molestias iure ut rem dolorum, ab dicta natus neque incidunt praesentium. Nostrum earum tempora eos, unde fuga esse sunt.
+                </div>
+                <div class="card-section r">
+                    <button class="btn btn-default" onclick="Uix.toggleAppearance({target:'#modal1'})">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-wrap hidden step-modals">
+        <div class="modal xs-12 sm-8 md-6 lg-4 xl-3">
+            <div class="card">
+                <div class="card-header">
+                    Steps 1 of 3.
+                </div>
+                <div class="card-section">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, magnam!
+                </div>
+                <div class="card-section r">
+                    <button class="btn btn-default" onclick="Uix.toggleAppearance({target:0, group:'.step-modals', animation:'rtl'});">
+                        Cancel
+                    </button>
+                    <button class="btn btn-primary" onclick="Uix.toggleAppearance({target:1, group:'.step-modals', animation:'ltr'});">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-wrap hidden step-modals">
+        <div class="modal xs-12 sm-8 md-6 lg-4 xl-3">
+            <div class="card">
+                <div class="card-header">
+                    Steps 2 of 3.
+                </div>
+                <div class="card-section">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, magnam!
+                </div>
+                <div class="card-section r">
+                    <button class="btn btn-default" onclick="Uix.toggleAppearance({target:0, group:'.step-modals', animation:'rtl'});">
+                        Back
+                    </button>
+                    <button class="btn btn-primary" onclick="Uix.toggleAppearance({target:2, group:'.step-modals', animation:'ltr'});">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-wrap hidden step-modals">
+        <div class="modal xs-12 sm-8 md-6 lg-4 xl-3">
+            <div class="card">
+                <div class="card-header">
+                    Steps 3 of 3.
+                </div>
+                <div class="card-section">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, magnam!
+                </div>
+                <div class="card-section r">
+                    <button class="btn btn-default" onclick="Uix.toggleAppearance({target:1, group:'.step-modals', animation:'rtl'});">
+                        Back
+                    </button>
+                    <button class="btn btn-success" onclick="Uix.toggleAppearance({target:2, group:'.step-modals', animation:'ltr'}).then(alert.bind(null, 'All is finished'));">
+                        Finish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mt-2">Dropdown</h2>
+    <button class="btn btn-success" onclick="Uix.drop({target:this.lastElementChild, source:this});">
+        Show dropdown
+        <ul class="dropdown hidden">
+            <li>This</li>
+            <li>is</li>
+            <li><a href="#453453">dropdown</a></li>
+        </ul>
+    </button>
+
+    <h2 class="mt-2">Pagination</h2>
+    <ul class="pagination">
+        <li><a href="#">1</a></li>
+        <li><span>...</span></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li class="active"><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">10</a></li>
+        <li><a href="#">123</a></li>
+        <li><span>...</span></li>
+        <li><a href="#">100 000 000</a></li>
+    </ul>
+
+    <h2 class="mt-2">Breadcrumbs</h2>
+    <ul class="breadcrumbs">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">2017</a></li>
+        <li><a href="#">Article</a></li>
+    </ul>
+
+
+    <h2 class="mt-2">Adaptation of cells to the screen width</h2>
+    <p>To see it in action try to resize your browser's window. Current device size is
+        <span class="chip chip-default hidden-sm-up"><strong class="chip-icon">xs</strong>mobile, portrait</span>
+        <span class="chip chip-default hidden-xs-only hidden-md-up"><strong class="chip-icon">sm</strong>mobile, landscape</span>
+        <span class="chip chip-default hidden-sm-down hidden-lg-up"><strong class="chip-icon">md</strong>tablets</span>
+        <span class="chip chip-default hidden-md-down hidden-xl-only"><strong class="chip-icon">lg</strong>laptops</span>
+        <span class="chip chip-default hidden-lg-down"><strong class="chip-icon">xl</strong>desktops</span>
+    </p>
+    <div class="grid split-1 example">
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 xl-2">
+            cell xs-12 sm-6 md-4 lg-3 xl-2
+        </div>
+    </div>
+
+
+    <h2 class="mt-2">Vertical alignment in grid</h2>
+    <p>items-top. It is default value for vertical alignment:</p>
+    <div class="grid split-0-5 mb-1 example">
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Here we have a lot of text. So cells are not equal by height and you can see how other cells is aligned. Do you see it? 
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+    </div>
+    <p>items-center:</p>
+    <div class="grid split-0-5 mb-1 items-center example">
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Here we have a lot of text. So cells are not equal by height and you can see how other cells is aligned. Do you see it? 
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+    </div>
+    <p>items-bottom</p>
+    <div class="grid split-0-5 mb-1 items-bottom example">
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Here we have a lot of text. So cells are not equal by height and you can see how other cells is aligned. Do you see it? 
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Small text.
+        </div>
+    </div>
+    <p>items-baseline:</p>
+    <div class="grid items-baseline pb-1 example">
+        <div class="cell xs-12 sm-6 md-4 lg-3"  style="font-size:3rem">
+            Item #1
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3"  style="font-size:2rem">
+            Item #2
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3"  style="font-size:1rem">
+            Item #3
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3"  style="font-size:0.5rem">
+            Item #4
+        </div>
+    </div>
+
+
+    <h2 class="mt-2">Vertical alignment of cell</h2>
+    <p>Each cell is able to change self vertical alignment</p>
+    <div class="grid split-0-5 items-center example">
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Here we have a lot of text. So cells are not equal by height and you can see how other cells is aligned. Do you see it? 
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 item-bottom">
+            Aligned to bottom.
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3 item-top">
+            Aligned to top.
+        </div>
+        <div class="cell xs-12 sm-6 md-4 lg-3">
+            Default grid alignment (center).
+        </div>
+    </div>
+
+
+    <h2 class="mt-2">Nested grids</h2>
+    <p>Nested grid has yellow background</p>
+    <div class="grid split-1 example">
+        <div class="cell xs-12 sm-6">
+            <div class="grid split-1 example" style="background-color:yellow">
+                <div class="cell xs-6">
+                    xs-6
+                </div>
+                <div class="cell xs-6">
+                    xs-6
+                </div>
+                <div class="cell xs-12">
+                    xs-12
+                </div>
+            </div>
+        </div>
+        <div class="cell xs-12 sm-6">
+            xs-12 sm-6<br>Here we have a lot of text. So cells are not equal by height and you can see how other cells is aligned. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit cum voluptates ad unde officia dolorem numquam, neque ea, tenetur commodi.
+        </div>
+    </div>
+
+    <h2 class="mt-2">Vertical collapse</h2>
+    <div class="alert alert-info mb-1">
+        <h3>Press close button</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit rerum tempore, facilis sapiente repudiandae iusto odit cum, omnis distinctio, et ea, incidunt eum eaque esse natus doloremque unde! Nostrum aliquid, autem, nemo voluptas obcaecati ex harum illo, commodi repellendus reiciendis voluptatibus culpa inventore. Odit, aperiam rerum at reprehenderit aliquam nulla perferendis obcaecati eaque est. At ab molestias praesentium dolore natus corporis ratione consectetur adipisci architecto, recusandae repellendus obcaecati molestiae unde necessitatibus ullam vero rerum commodi suscipit odio neque? Qui nam, illo velit sint sunt nesciunt autem rerum voluptatem officiis iusto dolorem, quia molestiae. Vero labore iste ipsam repellat assumenda repellendus.
+        <button class="btn btn-primary btn-sm btn-square alert-control" onclick="Uix.collapseHeight({target:this.parentNode}).then(Uix.wait.bind(this, 1000)).then(Uix.appear.bind(this, {target:this.parentNode, animation:'fade'}));">
+            &times;
+        </button>
+    </div>
+
+    <h2 class="mt-2">Horizontal collapse</h2>
+    <div class="alert alert-danger mb-1">
+        Press close button
+        <button class="btn btn-danger btn-sm btn-square alert-control" onclick="Uix.collapseWidth({target:this.parentNode}).then(Uix.wait.bind(this, 1000)).then(Uix.appear.bind(this, {target:this.parentNode, animation:'rise'}));">
+            &times;
+        </button>
+    </div>
+
+    <h2>Accordion. Example of collapse in group of elements.</h2>
+    <div class="card" id="accordion1">
+        <div class="card-header" onclick="Uix.toggleHeight({target:0,group:'#accordion1>.card-section'})">
+            Lorem
+        </div>
+        <div class="card-section">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ex quis veritatis accusantium tempore, minus voluptas porro est distinctio fuga iure dolore neque nisi hic sunt! Facilis dicta consequuntur perferendis maiores est reprehenderit velit omnis quis aliquam commodi, tenetur qui vel corporis molestias veniam error nesciunt tempora dolore consectetur fugiat. Doloribus esse, vel earum modi voluptates libero porro cum mollitia voluptatum repellendus corrupti sunt natus beatae id similique at quo nemo repellat explicabo tenetur architecto dolor perferendis! Doloremque nulla sunt ea aperiam voluptatibus, temporibus aliquid nihil dicta voluptatum voluptatem modi, molestias atque iste error repudiandae provident qui consectetur eum magni?
+        </div>
+        <div class="card-header" onclick="Uix.toggleHeight({target:1,group:'#accordion1>.card-section'})">
+            Ipsum
+        </div>
+        <div class="card-section hidden">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ex quis veritatis accusantium tempore, minus voluptas porro est distinctio fuga iure dolore neque nisi hic sunt! Facilis dicta consequuntur perferendis maiores est reprehenderit velit omnis quis aliquam commodi, tenetur qui vel corporis molestias veniam error nesciunt tempora dolore consectetur fugiat. Doloribus esse, vel earum modi voluptates libero porro cum mollitia voluptatum repellendus corrupti sunt natus beatae id similique at quo nemo repellat explicabo tenetur architecto dolor perferendis! Doloremque nulla sunt ea aperiam voluptatibus, temporibus aliquid nihil dicta voluptatum voluptatem modi, molestias atque iste error repudiandae provident qui consectetur eum magni?
+        </div>
+        <div class="card-header" onclick="Uix.toggleHeight({target:2,group:'#accordion1>.card-section'})">
+            Dolor
+        </div>
+        <div class="card-section hidden">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ex quis veritatis accusantium tempore, minus voluptas porro est distinctio fuga iure dolore neque nisi hic sunt! Facilis dicta consequuntur perferendis maiores est reprehenderit velit omnis quis aliquam commodi, tenetur qui vel corporis molestias veniam error nesciunt tempora dolore consectetur fugiat. Doloribus esse, vel earum modi voluptates libero porro cum mollitia voluptatum repellendus corrupti sunt natus beatae id similique at quo nemo repellat explicabo tenetur architecto dolor perferendis! Doloremque nulla sunt ea aperiam voluptatibus, temporibus aliquid nihil dicta voluptatum voluptatem modi, molestias atque iste error repudiandae provident qui consectetur eum magni?
+        </div>
+        <div class="card-header" onclick="Uix.toggleHeight({target:3,group:'#accordion1>.card-section'})">
+            Sit
+        </div>
+        <div class="card-section hidden">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ex quis veritatis accusantium tempore, minus voluptas porro est distinctio fuga iure dolore neque nisi hic sunt! Facilis dicta consequuntur perferendis maiores est reprehenderit velit omnis quis aliquam commodi, tenetur qui vel corporis molestias veniam error nesciunt tempora dolore consectetur fugiat. Doloribus esse, vel earum modi voluptates libero porro cum mollitia voluptatum repellendus corrupti sunt natus beatae id similique at quo nemo repellat explicabo tenetur architecto dolor perferendis! Doloremque nulla sunt ea aperiam voluptatibus, temporibus aliquid nihil dicta voluptatum voluptatem modi, molestias atque iste error repudiandae provident qui consectetur eum magni?
+        </div>
+        <div class="card-header" onclick="Uix.toggleHeight({target:4,group:'#accordion1>.card-section'})">
+            Amet
+        </div>
+        <div class="card-section hidden">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ex quis veritatis accusantium tempore, minus voluptas porro est distinctio fuga iure dolore neque nisi hic sunt! Facilis dicta consequuntur perferendis maiores est reprehenderit velit omnis quis aliquam commodi, tenetur qui vel corporis molestias veniam error nesciunt tempora dolore consectetur fugiat. Doloribus esse, vel earum modi voluptates libero porro cum mollitia voluptatum repellendus corrupti sunt natus beatae id similique at quo nemo repellat explicabo tenetur architecto dolor perferendis! Doloremque nulla sunt ea aperiam voluptatibus, temporibus aliquid nihil dicta voluptatum voluptatem modi, molestias atque iste error repudiandae provident qui consectetur eum magni?
+        </div>
+        <div class="card-header" onclick="Uix.toggleHeight({target:5,group:'#accordion1>.card-section'})">
+            Consectetur
+        </div>
+        <div class="card-section hidden">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ex quis veritatis accusantium tempore, minus voluptas porro est distinctio fuga iure dolore neque nisi hic sunt! Facilis dicta consequuntur perferendis maiores est reprehenderit velit omnis quis aliquam commodi, tenetur qui vel corporis molestias veniam error nesciunt tempora dolore consectetur fugiat. Doloribus esse, vel earum modi voluptates libero porro cum mollitia voluptatum repellendus corrupti sunt natus beatae id similique at quo nemo repellat explicabo tenetur architecto dolor perferendis! Doloremque nulla sunt ea aperiam voluptatibus, temporibus aliquid nihil dicta voluptatum voluptatem modi, molestias atque iste error repudiandae provident qui consectetur eum magni?
+        </div>
+    </div>
+    
+</div>
+<script src="dist/js/uix.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@media (min-width: nth(nth($deviceVariants, 2), 2)) {
+    label.cell {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        line-height: 2.5;
+        text-align: right;
+    }
+    [dir="rtl"] label.cell {
+        text-align: left;
+    }
+}
+@media (max-width: nth(nth($deviceVariants, 2), 2) - 1) {
+    label.cell {
+        line-height: 1.5;
+        padding-bottom: 0 !important;
+    }
+    label.cell + .cell {
+        padding-top: 0 !important;
+    }
+}
+fieldset {
+    display: block;
+    padding: 1em;
+    padding-top: 0.5em;
+    border: 1px solid $defaultBorderColor;
+    border-radius: $mainBorderRadius;
+}
+fieldset > legend {
+    padding: 0 0.5em;
+}
+.text-danger {
+    color: $dangerBorderColor;
+}
+.text-success {
+    color: $successBorderColor;
+}
+.text-primary {
+    color: $primaryBorderColor;
+}

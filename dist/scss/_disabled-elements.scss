@@ -1,0 +1,27 @@
+fieldset[disabled] > :not(legend) input[type="checkbox"] + span,
+fieldset[disabled] > :not(legend) input[type="radio"] + span,
+fieldset[disabled] > :not(legend) .form-control,
+fieldset[disabled] > :not(legend) .btn,
+fieldset[disabled] > input[type="checkbox"] + span,
+fieldset[disabled] > input[type="radio"] + span,
+fieldset[disabled] > .form-control,
+fieldset[disabled] > .btn,
+.btn[disabled],
+.form-control[disabled],
+input[disabled][type="checkbox"] + span,
+input[disabled][type="radio"] + span
+{
+    box-shadow: none !important;
+    color: $defaultBorderColor !important;
+    border-color: $defaultBorderColor !important;
+    background-color: $bgColor !important;
+    cursor: default !important;
+}
+fieldset[disabled] > :not(legend) input[type="checkbox"]:checked + span,
+input[disabled][type="checkbox"]:checked + span {
+    @include icon-checkbox-checkmark($defaultBorderColor);
+}
+fieldset[disabled] > :not(legend) input[type="radio"]:checked + span,
+input[disabled][type="radio"]:checked + span {
+    @include icon-radio-checkmark($defaultBorderColor);
+}

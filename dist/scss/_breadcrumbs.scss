@@ -1,0 +1,15 @@
+ul.breadcrumbs {
+    padding: 0;
+    margin: 0;
+}
+ul.breadcrumbs > li {
+    display: inline;
+}
+ul.breadcrumbs > li:after {
+    content: "/";
+    padding: 0 0.5em;
+    display: inline-block;
+}
+ul.breadcrumbs > li:last-child:after {
+    display: none;
+}

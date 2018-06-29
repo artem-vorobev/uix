@@ -1,0 +1,38 @@
+.pagination {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.pagination > li > * {
+    display: block;
+    min-width: 2.5em;
+    height: 2.5em;
+    border-radius: $mainBorderRadius;
+    padding: 0.5em;
+    color: inherit;
+    text-decoration: none;
+}
+.pagination > li:hover > a {
+    background-color: $bgHoverColor;
+}
+.pagination > li:first-child > *,
+.pagination > li:last-child > * {
+    border: 1px solid $defaultBorderColor;
+    background-color: $defaultColor;
+}
+.pagination > li:first-child > *:hover,
+.pagination > li:last-child > *:hover {
+    background-color: $defaultHoverColor;
+}
+.pagination > li.active > * {
+    background-color: $primaryColor;
+    border: 1px solid $primaryBorderColor;
+    color: contrast($primaryColor);
+}
+.pagination > li.active > *:hover {
+    background-color: $primaryHoverColor;
+}

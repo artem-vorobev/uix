@@ -1,0 +1,51 @@
+ul.tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul.tabs > li {
+    text-transform: uppercase;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+ul.tabs > li > a {
+    display: block;
+    margin: -1em;
+    padding: 1em;
+}
+ul.tabs > li > a:hover {
+    text-decoration: none;
+}
+ul.tabs > li.active {
+    padding-bottom: 0.5em;
+    border-bottom: 0.5em solid transparent;
+}
+
+ul.tabs.tabs-default {
+    background-color: $bgColor;
+    color: $mainFontColor;
+}
+ul.tabs.tabs-default > li:hover {
+    background-color: $bgHoverColor;
+}
+ul.tabs.tabs-default > li.active {
+    border-bottom-color: $primaryColor;
+}
+
+ul.tabs.tabs-primary {
+    background-color: $primaryColor;
+    color: contrast($primaryColor);
+}
+ul.tabs.tabs-primary > li:hover {
+    background-color: $primaryHoverColor;
+}
+ul.tabs.tabs-primary > li.active {
+    border-bottom-color: lighten($primaryColor, 30%);
+}

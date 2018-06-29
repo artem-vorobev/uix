@@ -1,0 +1,58 @@
+.dropdown {
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: $mainFontFamily;
+    text-transform: none;
+}
+ul.dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.35);
+    border-radius: $mainBorderRadius;
+    border: 1px solid $defaultBorderColor;
+    color: $mainFontColor;
+    text-align: left;
+}
+[dir="rtl"] ul.dropdown {
+    text-align: right;
+}
+ul.dropdown > li {
+    padding: 0.8em 1em;
+    background-color: $bgColor;
+    cursor: pointer;
+    white-space: nowrap;
+}
+ul.dropdown > li > .fa {
+    color: $primaryColor;
+    display: inline-block;
+    width: 2em;
+}
+ul.dropdown > li[disabled],
+ul.dropdown > li.disabled,
+ul.dropdown > li[disabled] > .fa,
+ul.dropdown > li.disabled > .fa {
+    color: $defaultBorderColor;
+    cursor: default;
+}
+ul.dropdown > li.separator {
+    background-color: $defaultBorderColor;
+    padding: 0;
+    height: 1px;
+}
+ul.dropdown > li:hover {
+    background-color: $bgHoverColor;
+}
+ul.dropdown > li[disabled]:hover,
+ul.dropdown > li.disabled:hover {
+    background-color: $bgColor;
+}
+ul.dropdown > li > a {
+    display: block;
+    padding: 0.5em 1em;
+    margin: -0.5em -1em;
+    color: inherit;
+    text-decoration: none;
+}

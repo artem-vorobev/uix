@@ -1,0 +1,23 @@
+input[hidden][type="checkbox"] + span, input[hidden][type="radio"] + span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    background-color: $defaultColor;
+    border: 1px solid $defaultBorderColor;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;  
+}
+
+input[hidden][type="checkbox"] + span {border-radius: $mainBorderRadius;}
+input[hidden][type="radio"] + span {border-radius: 50%;}
+
+input[hidden][type="radio"]:checked + span {
+    @include icon-radio-checkmark($checkMarksColor);
+}
+input[hidden][type="checkbox"]:checked + span {
+    @include icon-checkbox-checkmark($checkMarksColor);
+}
+input[type="checkbox"], input[type="radio"] {vertical-align: middle;}

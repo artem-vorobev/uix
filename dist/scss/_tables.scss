@@ -1,0 +1,21 @@
+.table-wrap {
+    overflow-x: auto;
+    overflow-y: visible;
+}
+.table {
+    border-collapse: collapse;
+}
+.table th {
+    text-align: left;
+    padding: 0.5em;
+}
+.table td {
+    padding: 0.5em;
+    border-top: 1px solid $defaultBorderColor;
+}
+.table td {
+    vertical-align: middle;
+}
+.nowrap {
+    white-space: nowrap;
+}

@@ -1,0 +1,85 @@
+.btn {
+    display: inline-block;
+    position: relative;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: transparent;
+    padding: 0.5em 1em;
+    height: 2.5em;
+    font: inherit;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    min-width: 7em;
+    border-radius: $mainBorderRadius;
+}
+a.btn:hover {
+    text-decoration: none;
+}
+@media (max-width: nth(nth($deviceVariants, 4), 2) - 1) {
+    .btn {min-width: 2.5em;}
+}
+.cell > .btn:only-child {
+    display: block;
+    width: 100%;
+}
+.btn-square {
+    width: 2.5em;
+    min-width: auto;
+    padding: 0.5em 0;
+}
+.btn-round {
+    width: 2.5em;
+    min-width: auto;
+    padding: 0.5em 0;
+    border-radius: 1.25em;
+}
+.btn-sm {
+    font-size: 0.6em;
+}
+.btn-sm > .fa {
+    font-size: 1.3em;
+}
+.btn-lg {
+    font-size: 1.2em;
+}
+.btn:focus {
+    z-index: 10;
+}
+.btn.btn-default {
+    color: $mainFontColor;
+    background-color: $defaultColor;
+    border-color: $defaultBorderColor;
+}
+.btn.btn-default:hover {background-color: $defaultHoverColor;}
+.btn.btn-default:focus {box-shadow: 0 0 0 3px transparentize($defaultBorderColor, 0.5);}
+.btn.btn-default:active, .btn.btn-default.active {background-color: $defaultActiveColor;}
+
+.btn.btn-primary {
+    color: contrast($primaryColor);
+    background-color: $primaryColor;
+    border-color: $primaryBorderColor;
+}
+.btn.btn-primary:hover {background-color: $primaryHoverColor;}
+.btn.btn-primary:focus {box-shadow: 0 0 0 3px transparentize($primaryBorderColor, 0.5);}
+.btn.btn-primary:active, .btn.btn-primary.active {background-color: $primaryActiveColor;}
+
+.btn.btn-success {
+    color: contrast($successColor);
+    background-color: $successColor;
+    border-color: $successBorderColor;
+}
+.btn.btn-success:hover {background-color: $successHoverColor;}
+.btn.btn-success:focus {box-shadow: 0 0 0 3px transparentize($successBorderColor, 0.5);}
+.btn.btn-success:active, .btn.btn-success.active {background-color: $successActiveColor;}
+
+.btn.btn-danger {
+    color: contrast($dangerColor);
+    background-color: $dangerColor;
+    border-color: $dangerBorderColor;
+}
+.btn.btn-danger:hover {background-color: $dangerHoverColor;}
+.btn.btn-danger:focus {box-shadow: 0 0 0 3px transparentize($dangerBorderColor, 0.5);}
+.btn.btn-danger:active, .btn.btn-danger.active {background-color: $dangerActiveColor;}

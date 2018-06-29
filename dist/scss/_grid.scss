@@ -1,0 +1,100 @@
+.hidden, [hidden] {
+    display: none !important;
+}   
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.cell {
+    width: 100%;
+    position: relative;
+}
+.grid.items-top {
+    align-items: flex-start;
+}
+.grid.items-bottom {
+    align-items: flex-end;
+}
+.grid.items-center {
+    align-items: center;
+}
+.grid.items-baseline {
+    align-items: baseline;
+}
+.grid.items-stretch {
+    align-items: stretch;
+}
+.cell.item-top {
+    align-self: flex-start;
+}
+.cell.item-bottom {
+    align-self: flex-end;
+}
+.cell.item-center {
+    align-self: center;
+}
+.cell.item-baseline {
+    align-self: baseline;
+}
+.cell.item-stretch {
+    align-self: stretch;
+}
+.container {
+    margin: 0 auto;
+}
+
+@each $class, $value in $splitVariants {
+    .grid.split-#{$class}           {margin: -$value/2;}
+    .grid.split-#{$class} > .cell   {padding: $value/2;}
+    .grid.padding-#{$class}         {padding: $value/2;}
+    .grid.padding-#{$class} > .cell {padding: $value/2;}
+    .m-#{$class}                    {margin: $value !important;}
+    .mb-#{$class}                   {margin-bottom: $value !important;}
+    .mt-#{$class}                   {margin-top: $value !important;}
+    .ml-#{$class}                   {margin-left: $value !important;}
+    [dir="rtl"] .ml-#{$class}       {margin-right: $value !important;}
+    .mr-#{$class}                   {margin-right: $value !important;}
+    [dir="rtl"] .mr-#{$class}       {margin-left: $value !important;}
+    .mrl-#{$class}, .mrl-#{$class}  {margin-right: $value !important; margin-left: $value !important;}
+    .mtb-#{$class}, .mbt-#{$class}  {margin-top: $value !important; margin-bottom: $value !important;}
+    .p-#{$class}                    {padding: $value !important;}
+    .pb-#{$class}                   {padding-bottom: $value !important;}
+    .pt-#{$class}                   {padding-top: $value !important;}
+    .pl-#{$class}                   {padding-left: $value !important;}
+    [dir="rtl"] .pl-#{$class}       {padding-right: $value !important;}
+    .pr-#{$class}                   {padding-right: $value !important;}
+    [dir="rtl"] .pr-#{$class}       {padding-left: $value !important;}
+    .prl-#{$class}, .prl-#{$class}  {padding-right: $value !important; padding-left: $value !important;}
+    .ptb-#{$class}, .pbt-#{$class}  {padding-top: $value !important; padding-bottom: $value !important;}
+}
+
+$n: 1;
+@each $selector, $minWidth, $containerWidth in $deviceVariants {
+    @media (min-width:#{$minWidth}) {
+        @for $i from 1 through $columnNumber {
+            .#{$selector}-#{$i}                     {width: 100%*$i/$columnNumber;}
+            .#{$selector}-#{$i}-move-r              {right: 100%*$i/$columnNumber;}
+            [dir="rtl"] .#{$selector}-#{$i}-move-r  {left: 100%*$i/$columnNumber;}
+            .#{$selector}-#{$i}-move-l              {left: 100%*$i/$columnNumber;}
+            [dir="rtl"] .#{$selector}-#{$i}-move-l  {right: 100%*$i/$columnNumber;}
+            .#{$selector}-#{$i}-space-r             {margin-right: 100%*$i/$columnNumber;}
+            [dir="rtl"] .#{$selector}-#{$i}-space-r {margin-left: 100%*$i/$columnNumber;}
+            .#{$selector}-#{$i}-space-l             {margin-left: 100%*$i/$columnNumber;}
+            [dir="rtl"] .#{$selector}-#{$i}-space-l {margin-right: 100%*$i/$columnNumber;}
+        }
+        .container {max-width: $containerWidth;}
+        .hidden-#{$selector}-up {display:none !important;}
+    }
+    $maxWidth: if($n < length($deviceVariants), nth(nth($deviceVariants, $n + 1), 2) - 1px, 999999px);
+    @media(min-width:#{$minWidth}) and (max-width:#{$maxWidth}) {
+        .hidden-#{$selector}-only {display:none !important;}
+    }
+    @media(max-width:#{$maxWidth}) {
+        .hidden-#{$selector}-down {display:none !important;}
+    }
+    $n: $n+1;
+}

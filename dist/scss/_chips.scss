@@ -1,0 +1,56 @@
+.chip {
+    display: inline-block;
+    color: $mainFontColor;
+    vertical-align: baseline;
+    line-height: 2em;
+    padding: 0 0.5em;
+    border-radius: 1em;
+    white-space: nowrap;
+    margin-bottom: 0.3em;
+    position: relative;
+}
+.chip-icon {
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+    left: -0.5em;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    border-radius: 1em;
+    border: 1px solid transparent;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.chip-default {
+    background-color: $bgHoverColor;
+}
+.chip-default .chip-icon {
+    background-color: $bgColor;
+    border-color: $defaultBorderColor;
+}
+.chip-primary {
+    background-color: transparentize($primaryColor, 0.85);
+}
+.chip-primary .chip-icon {
+    background-color: $primaryColor;
+    color: contrast($primaryColor);
+    border-color: $primaryBorderColor;
+}
+.chip-success {
+    background-color: transparentize($successColor, 0.85);
+}
+.chip-success .chip-icon {
+    background-color: $successColor;
+    color: contrast($successColor);
+    border-color: $successBorderColor;
+}
+.chip-danger {
+    background-color: transparentize($dangerColor, 0.85);
+}
+.chip-danger .chip-icon {
+    background-color: $dangerColor;
+    color: contrast($dangerColor);
+    border-color: $dangerBorderColor;
+}
