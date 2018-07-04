@@ -8,7 +8,6 @@
     border-radius: $mainBorderRadius;
     display: block;
     width: 100%;
-    @include progress-bar-bg($defaultBorderColor, 0.25);
     background-size: auto 110%;
     background-position: 0 50%;
     background-repeat: repeat-x;

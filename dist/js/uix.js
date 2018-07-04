@@ -1,6 +1,6 @@
 /**
  * Uix frontend framework. Javascript functions
- * Version: 1.0, last update 29.06.2018
+ * Version: 1.0.2, last update 04.07.2018
  * Author: Artem Vorobev <artem.v.mailbox@gmail.com>
  */
 if (!('Uix' in window)) window.Uix = {}; (function() { "use strict";
@@ -389,13 +389,13 @@ function appear(params, then)
     target.style.transform = '';
     target.style.opacity = '';
 
-    target.dispatchEvent(new Event('beforeShowModal'));
-    target.dispatchEvent(new Event('beforeToggleModal'));
+    target.dispatchEvent(new Event('beforeAppear'));
+    target.dispatchEvent(new Event('beforeToggleAppearance'));
 
     setTimeout(function() {
         target.style.cssText = savedCss;
-        target.dispatchEvent(new Event('afterShowModal'));
-        target.dispatchEvent(new Event('afterToggleModal'));
+        target.dispatchEvent(new Event('afterAppear'));
+        target.dispatchEvent(new Event('afterToggleAppearance'));
         if (typeof then == 'function') then();
     }, duration);
 }
@@ -441,14 +441,14 @@ function disappear(params, then)
     }
     target.style.opacity = '0';
 
-    target.dispatchEvent(new Event('beforeHideModal'));
-    target.dispatchEvent(new Event('beforeToggleModal'));
+    target.dispatchEvent(new Event('beforeDisappear'));
+    target.dispatchEvent(new Event('beforeToggleAppearance'));
 
     setTimeout(function() {
         target.classList.add(hidingClass);
         target.style.cssText = savedCss;
-        target.dispatchEvent(new Event('afterHideModal'));
-        target.dispatchEvent(new Event('afterToggleModal'));
+        target.dispatchEvent(new Event('afterDisappear'));
+        target.dispatchEvent(new Event('afterToggleAppearance'));
         if (typeof then == 'function') then();
     }, duration);
 }
@@ -553,9 +553,9 @@ function drop(params, then)
     target.style.transition = 'transform '+duration+'ms ease-out';
     target.style.transform = 'scaleY(1)';
     
-    target.dispatchEvent(new Event('beforeShowDropdown'));
+    target.dispatchEvent(new Event('beforeDrop'));
     setTimeout(function(){
-        target.dispatchEvent(new Event('afterShowDropdown'));
+        target.dispatchEvent(new Event('afterDrop'));
         if (typeof then == 'function') then();
     }, duration);
 
@@ -565,12 +565,12 @@ function drop(params, then)
         target.style.transition = 'opacity '+duration+'ms ease';
         forceRedraw(target);
         target.style.opacity = '0';
-        target.dispatchEvent(new Event('beforeHideDropdown'));
+        target.dispatchEvent(new Event('beforeUndrop'));
 
         setTimeout(function(){
             target.style.cssText = savedCss;
             target.classList.add(hidingClass);
-            target.dispatchEvent(new Event('afterHideDropdown'));
+            target.dispatchEvent(new Event('afterUndrop'));
         }, duration);
 
         document.body.removeEventListener('click', hideDropdown, true);
