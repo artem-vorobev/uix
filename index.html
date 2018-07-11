@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <title>Uix framework test</title>
-    <link rel="stylesheet" href="dist/scss/uix.min.css">
+    <link rel="stylesheet" href="dist/css/uix-grid.min.css">
+    <link rel="stylesheet" href="dist/css/uix-components.min.css">
     <style>
         .grid.example {
             outline: 1px dashed #f00;
@@ -19,17 +20,17 @@
 <body>
 <div class="container ptb-2 prl-1">
     <div class="alert alert-info">
-        This page is created for testing Uix library.
+        This page is created for testing Uix framework.
     </div>
 
-    <h1 class="mt-2">Heading H1</h1>
+    <h1 class="mt-5">Heading H1</h1>
     <h2>Heading H2</h2>
     <h3>Heading H3</h3>
     <h4>Heading H4</h4>
     <h5>Heading H5</h5>
     <h6>Heading H6</h6>
 
-    <h2 class="mt-2">Cards</h2>
+    <h2 class="mt-5">Cards</h2>
     <div class="card mb-1">
         <div class="card-header-big">
             <h2 class="m-0">Big card</h2>
@@ -50,7 +51,7 @@
         </div>
     </div>
 
-    <h2 class="mt-2">Chips</h2>
+    <h2 class="mt-5">Chips</h2>
     <p>
         <span class="chip chip-default"><strong class="chip-icon">1</strong> Default</span>
         <span class="chip chip-primary"><strong class="chip-icon">2</strong> Primary</span>
@@ -58,7 +59,7 @@
         <span class="chip chip-danger"><strong class="chip-icon">4</strong> Danger</span>
     </p>
 
-    <h2 class="mt-2">Buttons</h2>
+    <h2 class="mt-5">Buttons</h2>
     <p>
         Types:<br>
         <button class="btn btn-default">Default</button>
@@ -83,29 +84,39 @@
         <button class="btn btn-success btn-sm btn-round">S</button>
     </p>
 
-    <h2 class="mt-2">Tabs</h2>
+    <h2 class="mt-5">Tabs</h2>
     <ul class="tabs tabs-default">
-        <li class="active">Tab 1</li>
-        <li>Tab 2</li>
-        <li>Tab 3</li>
-        <li>Tab 4</li>
+        <li class="active" onclick="Uix.tab(this, 0)">Tab 1</li>
+        <li onclick="Uix.tab(this, 1)">Tab 2</li>
+        <li onclick="Uix.tab(this, 2)">Tab 3</li>
+        <li onclick="Uix.tab(this, 3)">Tab 4</li>
     </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laboriosam delectus nesciunt est suscipit explicabo eos animi nobis ad! Voluptate porro aut, architecto, perspiciatis in corporis alias nisi ea quo mollitia iusto, amet animi dolorum accusantium. Delectus illo eius, eaque, at doloremque magnam reprehenderit inventore rerum modi fugit assumenda maxime.</p>
+    <div>
+        <p>Tab1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laboriosam delectus nesciunt est suscipit explicabo eos animi nobis ad! Voluptate porro aut, architecto, perspiciatis in corporis alias nisi ea quo mollitia iusto, amet animi dolorum accusantium. Delectus illo eius, eaque, at doloremque magnam reprehenderit inventore rerum modi fugit assumenda maxime</p>
+        <p class="hidden">Tab2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum neque cupiditate eius qui similique ipsam dolores laboriosam, sequi nemo provident minus nostrum veritatis iusto vero illo vel facere. Fugit! Lorem ipsum dolor.</p>
+        <p class="hidden">Tab3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum neque cupiditate eius qui similique ipsam dolores laboriosam, sequi nemo provident minus nostrum veritatis iusto vero illo vel facere.</p>
+        <p class="hidden">Tab4. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum neque cupiditate eius qui similique ipsam dolores laboriosam, sequi nemo provident minus nostrum veritatis iusto vero illo vel facere. Fugit!</p>
+    </div>
 
     <ul class="tabs tabs-primary">
-        <li class="active">Tab 1</li>
-        <li>Tab 2</li>
-        <li>Tab 3</li>
-        <li>Tab 4</li>
+        <li class="active" onclick="Uix.tab(this, 0)">Tab 1</li>
+        <li onclick="Uix.tab(this, 1)">Tab 2</li>
+        <li onclick="Uix.tab(this, 2)">Tab 3</li>
+        <li onclick="Uix.tab(this, 3)">Tab 4</li>
     </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laboriosam delectus nesciunt est suscipit explicabo eos animi nobis ad! Voluptate porro aut, architecto, perspiciatis in corporis alias nisi ea quo mollitia iusto, amet animi dolorum accusantium. Delectus illo eius, eaque, at doloremque magnam reprehenderit inventore rerum modi fugit assumenda maxime.</p>
+    <div>
+        <p>Tab1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laboriosam delectus nesciunt est suscipit explicabo eos animi nobis ad! Voluptate porro aut, architecto, perspiciatis in corporis alias nisi ea quo mollitia iusto, amet animi dolorum accusantium. Delectus illo eius, eaque, at doloremque magnam reprehenderit inventore rerum modi fugit assumenda maxime</p>
+        <p class="hidden">Tab2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum neque cupiditate eius qui similique ipsam dolores laboriosam, sequi nemo provident minus nostrum veritatis iusto vero illo vel facere. Fugit! Lorem ipsum dolor.</p>
+        <p class="hidden">Tab3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum neque cupiditate eius qui similique ipsam dolores laboriosam, sequi nemo provident minus nostrum veritatis iusto vero illo vel facere.</p>
+        <p class="hidden">Tab4. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorum neque cupiditate eius qui similique ipsam dolores laboriosam, sequi nemo provident minus nostrum veritatis iusto vero illo vel facere. Fugit!</p>
+    </div>
 
-    <h2 class="mt-2">Progress bars</h2>
+    <h2 class="mt-5">Progress bars</h2>
     <div class="progress progress-primary animated"><span style="width:33%">33%</span></div>
     <div class="progress progress-success"><span style="width:100%">100%</span></div>
     <div class="progress progress-danger"><span style="width:50%">ERROR!</span></div>
 
-    <h2 class="mt-2">Forms</h2>
+    <h2 class="mt-5">Forms</h2>
     <fieldset>
         <legend><label><input hidden type="checkbox" name="c2"><span></span> Checkbox in legend of fieldset</label></legend>
         <div class="grid split-1">
@@ -213,7 +224,7 @@
             </div>
     </fieldset>
 
-    <h2 class="mt-2">Horizontal one-line form</h2>
+    <h2 class="mt-5">Horizontal one-line form</h2>
     <div class="one-line-form">
         <label>First name</label>
         <input type="text" class="form-control" value="Andy">
@@ -222,7 +233,7 @@
         <input type="button" class="btn btn-default" value="Send">
     </div>
 
-    <h2 class="mt-2">Group of inputs</h2>
+    <h2 class="mt-5">Group of inputs</h2>
     <div class="input-group mb-1">
         <input type="text" class="form-control" placeholder="First name">
         <input type="text" class="form-control" placeholder="Last name">
@@ -236,7 +247,7 @@
         <button class="btn btn-danger" disabled>Disabled</button>
     </div>
 
-    <h2 class="mt-2">Alerts</h2>
+    <h2 class="mt-5">Alerts</h2>
     <div class="alert alert-primary mb-1">Primary</div>
     <div class="alert alert-success mb-1">Success</div>
     <div class="alert alert-danger mb-1">Danger</div>
@@ -245,7 +256,7 @@
         <button class="btn btn-primary btn-sm btn-square alert-control">&times;</button>
     </div>
 
-    <h2 class="mt-2">Modals</h2>
+    <h2 class="mt-5">Modals</h2>
     <button class="btn btn-primary" onclick="Uix.appear({target:'#modal1'})">
         Single modal
     </button>
@@ -332,7 +343,7 @@
         </div>
     </div>
 
-    <h2 class="mt-2">Dropdown</h2>
+    <h2 class="mt-5">Dropdown</h2>
     <button class="btn btn-success" onclick="Uix.drop({target:this.lastElementChild, source:this});">
         Show dropdown
         <ul class="dropdown hidden">
@@ -342,7 +353,7 @@
         </ul>
     </button>
 
-    <h2 class="mt-2">Pagination</h2>
+    <h2 class="mt-5">Pagination</h2>
     <ul class="pagination">
         <li><a href="#">1</a></li>
         <li><span>...</span></li>
@@ -356,7 +367,7 @@
         <li><a href="#">100 000 000</a></li>
     </ul>
 
-    <h2 class="mt-2">Breadcrumbs</h2>
+    <h2 class="mt-5">Breadcrumbs</h2>
     <ul class="breadcrumbs">
         <li><a href="#">Home</a></li>
         <li><a href="#">News</a></li>
@@ -365,7 +376,7 @@
     </ul>
 
 
-    <h2 class="mt-2">Adaptation of cells to the screen width</h2>
+    <h2 class="mt-5">Adaptation of cells to the screen width</h2>
     <p>To see it in action try to resize your browser's window. Current device size is
         <span class="chip chip-default hidden-sm-up"><strong class="chip-icon">xs</strong>mobile, portrait</span>
         <span class="chip chip-default hidden-xs-only hidden-md-up"><strong class="chip-icon">sm</strong>mobile, landscape</span>
@@ -416,7 +427,7 @@
     </div>
 
 
-    <h2 class="mt-2">Vertical alignment in grid</h2>
+    <h2 class="mt-5">Vertical alignment in grid</h2>
     <p>items-top. It is default value for vertical alignment:</p>
     <div class="grid split-0-5 mb-1 example">
         <div class="cell xs-12 sm-6 md-4 lg-3">
@@ -479,7 +490,7 @@
     </div>
 
 
-    <h2 class="mt-2">Vertical alignment of cell</h2>
+    <h2 class="mt-5">Vertical alignment of cell</h2>
     <p>Each cell is able to change self vertical alignment</p>
     <div class="grid split-0-5 items-center example">
         <div class="cell xs-12 sm-6 md-4 lg-3">
@@ -497,7 +508,7 @@
     </div>
 
 
-    <h2 class="mt-2">Nested grids</h2>
+    <h2 class="mt-5">Nested grids</h2>
     <p>Nested grid has yellow background</p>
     <div class="grid split-1 example">
         <div class="cell xs-12 sm-6">
@@ -518,7 +529,7 @@
         </div>
     </div>
 
-    <h2 class="mt-2">Vertical collapse</h2>
+    <h2 class="mt-5">Vertical collapse</h2>
     <div class="alert alert-info mb-1">
         <h3>Press close button</h3>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit rerum tempore, facilis sapiente repudiandae iusto odit cum, omnis distinctio, et ea, incidunt eum eaque esse natus doloremque unde! Nostrum aliquid, autem, nemo voluptas obcaecati ex harum illo, commodi repellendus reiciendis voluptatibus culpa inventore. Odit, aperiam rerum at reprehenderit aliquam nulla perferendis obcaecati eaque est. At ab molestias praesentium dolore natus corporis ratione consectetur adipisci architecto, recusandae repellendus obcaecati molestiae unde necessitatibus ullam vero rerum commodi suscipit odio neque? Qui nam, illo velit sint sunt nesciunt autem rerum voluptatem officiis iusto dolorem, quia molestiae. Vero labore iste ipsam repellat assumenda repellendus.
@@ -527,7 +538,7 @@
         </button>
     </div>
 
-    <h2 class="mt-2">Horizontal collapse</h2>
+    <h2 class="mt-5">Horizontal collapse</h2>
     <div class="alert alert-danger mb-1">
         Press close button
         <button class="btn btn-danger btn-sm btn-square alert-control" onclick="Uix.collapseWidth({target:this.parentNode}).then(Uix.wait.bind(this, 1000)).then(Uix.appear.bind(this, {target:this.parentNode, animation:'rise'}));">
@@ -576,6 +587,6 @@
     </div>
     
 </div>
-<script src="dist/js/uix.js"></script>
+<script async src="dist/js/uix.min.js"></script>
 </body>
 </html>

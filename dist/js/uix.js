@@ -1,6 +1,6 @@
 /**
  * Uix frontend framework. Javascript functions
- * Version: 1.0.2, last update 04.07.2018
+ * Version: 1.0.3, last update 11.07.2018
  * Author: Artem Vorobev <artem.v.mailbox@gmail.com>
  */
 if (!('Uix' in window)) window.Uix = {}; (function() { "use strict";
@@ -10,7 +10,6 @@ function forceRedraw(element)
     element.offsetWidth;
     element.offsetHeight;
 }
-
 
 function fillDefaults(params, list)
 {
@@ -588,5 +587,32 @@ Uix.drop = function(params)
     params = fillDefaults(params, ['target', 'source', 'duration', 'hidingClass']);
     return new Promise(drop.bind(null, params));
 }
+
+Uix.toggleClass = function(params) {
+    params = fillDefaults(params, ['target', 'group', 'duration', 'class', 'invert']);
+    var cls     = params['class'],
+        group   = params.group,
+        target  = params.target;
+
+    if (group.length > 0) {
+        if (params.invert) {
+            target.classList.remove(cls);
+            for (var i=0, l=group.length; i<l; i++) if (group[i] != target) group[i].classList.add(cls);
+        } else {
+            target.classList.add(cls);
+            for (var i=0, l=group.length; i<l; i++) if (group[i] != target) group[i].classList.remove(cls);
+        }
+    } else {
+        target.classList.toggle(cls);
+    }
+
+    return Uix.wait(params.duration); 
+}
+
+Uix.tab = function(btn, n) {
+    Uix.toggleClass({target:n, group:btn.parentNode.children, 'class':'active'});
+    Uix.toggleClass({target:n, group:btn.parentNode.nextElementSibling.children, 'class':'hidden', invert:true});
+}
+
 
 })();

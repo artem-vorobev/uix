@@ -1,9 +1,3 @@
-/**
- * Uix frontend framework.
- * Version: 1.0.2, last update 04.07.2018
- * Author: Artem Vorobev <artem.v.mailbox@gmail.com>
- */
-
 $deviceVariants: (
     ('xs', 0, 100%),
     ('sm', 544px, 576px),
@@ -13,16 +7,16 @@ $deviceVariants: (
 );
 
 $splitVariants: (
-    '0':     0em,
-    '0-25':  0.25em,
-    '0-5':   0.5em,
-    '0-75':  0.75em,
-    '1':     1em,
-    '1-5':   1.5em,
-    '2':     2em,
-    '3':     3em,
-    '5':     5em,
-    '8':     8em
+    '0':     0,
+    '0-25':  0.25rem,
+    '0-5':   0.5rem,
+    '0-75':  0.75rem,
+    '1':     1rem,
+    '1-5':   1.5rem,
+    '2':     2rem,
+    '3':     3rem,
+    '5':     5rem,
+    '8':     8rem
 );
 
 $columnNumber:      12;
@@ -87,24 +81,3 @@ $checkMarksColor: $successColor;
     $avg: (red($color) + green($color) + blue($color))/3;
     @return if($avg > 128, $contrastDark, $contrastLight);
 }
-
-@import "_reset.scss";
-@import "_grid.scss";
-@import "_svg.scss";
-
-@import "_cards.scss";
-@import "_chips.scss";
-@import "_fieldset-labels.scss";
-@import "_tabs.scss";
-@import "_buttons.scss";
-@import "_textfields.scss";
-@import "_progressbars.scss";
-@import "_input-groups.scss";
-@import "_checkboxes-radio.scss";
-@import "_disabled-elements.scss";
-@import "_modal-windows.scss";
-@import "_alerts.scss";
-@import "_pagination.scss";
-@import "_breadcrumbs.scss";
-@import "_dropdowns.scss";
-@import "_tables.scss";
