@@ -36,16 +36,16 @@ ul.tabs.tabs-default > li:hover {
     background-color: $bgHoverColor;
 }
 ul.tabs.tabs-default > li.active {
-    border-bottom-color: $primaryColor;
+    border-bottom-color: map-get($bgColorMap, 'primary');
 }
 
 ul.tabs.tabs-primary {
-    background-color: $primaryColor;
-    color: contrast($primaryColor);
+    background-color: map-get($bgColorMap, 'primary');
+    color: contrast(map-get($bgColorMap, 'primary'));
 }
 ul.tabs.tabs-primary > li:hover {
-    background-color: $primaryHoverColor;
+    background-color: map-get($hoverColorMap, 'primary');
 }
 ul.tabs.tabs-primary > li.active {
-    border-bottom-color: lighten($primaryColor, 30%);
+    border-bottom-color: lighten(map-get($bgColorMap, 'primary'), 30%);
 }

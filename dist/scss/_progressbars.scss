@@ -4,7 +4,7 @@
     height: 1.5em;
     overflow: hidden;
     background-color: $textInputColor;
-    border: 1px solid $defaultBorderColor;
+    border: 1px solid map-get($borderColorMap, 'default');
     border-radius: $mainBorderRadius;
     display: block;
     width: 100%;
@@ -22,21 +22,15 @@
     transition: width 1s ease, background-color 1s ease;
     text-align: center;
 }
-.progress.progress-primary > span {
-    background-color: $primaryColor;
-    color: contrast($primaryColor);
-    @include progress-bar-bg($primaryBorderColor, 0.5);
+
+@each $name, $color in $bgColorMap {
+    .progress.progress-#{$name} > span {
+        background-color: $color;
+        color: contrast($color);
+        @include progress-bar-bg(map-get($borderColorMap, $name), 0.5);
+    }
 }
-.progress.progress-success > span {
-    color: contrast($successColor);
-    background-color: $successColor;
-    @include progress-bar-bg($successBorderColor, 0.5);
-}
-.progress.progress-danger > span {
-    background-color: $dangerColor;
-    color: contrast($dangerColor);
-    @include progress-bar-bg($dangerBorderColor, 0.5);
-}
+
 .progress.animated > span {
     animation: progressBarAnimation 1s ease infinite;
 }

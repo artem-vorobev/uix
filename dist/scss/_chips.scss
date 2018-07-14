@@ -23,34 +23,14 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
-.chip-default {
-    background-color: $bgHoverColor;
-}
-.chip-default .chip-icon {
-    background-color: $bgColor;
-    border-color: $defaultBorderColor;
-}
-.chip-primary {
-    background-color: transparentize($primaryColor, 0.85);
-}
-.chip-primary .chip-icon {
-    background-color: $primaryColor;
-    color: contrast($primaryColor);
-    border-color: $primaryBorderColor;
-}
-.chip-success {
-    background-color: transparentize($successColor, 0.85);
-}
-.chip-success .chip-icon {
-    background-color: $successColor;
-    color: contrast($successColor);
-    border-color: $successBorderColor;
-}
-.chip-danger {
-    background-color: transparentize($dangerColor, 0.85);
-}
-.chip-danger .chip-icon {
-    background-color: $dangerColor;
-    color: contrast($dangerColor);
-    border-color: $dangerBorderColor;
+
+@each $name, $color in $bgColorMap {
+    .chip-#{$name} {
+        background-color: if($name == 'default', $bgHoverColor, transparentize($color, 0.85));
+    }
+    .chip-#{$name} .chip-icon {
+        background-color: $color;
+        color: contrast($color);
+        border-color: map-get($borderColorMap, $name);
+    }
 }

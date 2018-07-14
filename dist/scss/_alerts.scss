@@ -17,39 +17,20 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
-
-.alert-danger {
-    background-color: $dangerColor;
-    color: contrast($dangerColor);
-    border-color: $dangerBorderColor;
-}
-.alert-danger::after {
-    content: "";
-    @include icon-danger(contrast($dangerColor));
-}
-
-.alert-info, .alert-primary {
-    background-color: $primaryColor;
-    color: contrast($primaryColor);
-    border-color: $primaryBorderColor;
-}
-.alert-primary::after,
-.alert-info::after {
-    content: "";
-    @include icon-info(contrast($primaryColor));
-}
-
-.alert-success {
-    background-color: $successColor;
-    color: contrast($successColor);
-    border-color: $successBorderColor;
-}
-.alert-success::after {
-    content: "";
-    @include icon-success(contrast($successColor));
-}
 .alert-control {
     position: absolute;
     top: 0.75em;
     right: 0.75em;
+}
+
+@each $name, $color in $bgColorMap {
+    .alert-#{$name} {
+        background-color: $color;
+        color: contrast($color);
+        border-color: map-get($borderColorMap, $name);
+    }
+    .alert-#{$name}::after {
+        content: "";
+        @include alert-icon($name, contrast($color));
+    }
 }

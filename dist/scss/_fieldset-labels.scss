@@ -24,18 +24,20 @@ fieldset {
     display: block;
     padding: 1em;
     padding-top: 0.5em;
-    border: 1px solid $defaultBorderColor;
+    border: 1px solid map-get($borderColorMap, 'default');
     border-radius: $mainBorderRadius;
 }
 fieldset > legend {
     padding: 0 0.5em;
 }
-.text-danger {
-    color: $dangerBorderColor;
-}
-.text-success {
-    color: $successBorderColor;
-}
-.text-primary {
-    color: $primaryBorderColor;
+
+@each $name, $color in $borderColorMap {
+    .text-#{$name} {
+        color: $color;
+    }
+    @if $name == 'default' {
+        .text-muted {
+            color: $color;
+        }
+    }
 }

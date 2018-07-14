@@ -4,8 +4,8 @@ input[hidden][type="checkbox"] + span, input[hidden][type="radio"] + span {
     width: 1.5em;
     height: 1.5em;
     text-align: center;
-    background-color: $defaultColor;
-    border: 1px solid $defaultBorderColor;
+    background-color: map-get($bgColorMap, 'default');
+    border: 1px solid map-get($borderColorMap, 'default');
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;  

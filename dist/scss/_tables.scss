@@ -11,7 +11,7 @@
 }
 .table td {
     padding: 0.5em;
-    border-top: 1px solid $defaultBorderColor;
+    border-top: 1px solid map-get($borderColorMap, 'default');
 }
 .table td {
     vertical-align: middle;

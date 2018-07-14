@@ -3,12 +3,25 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.20);
     border-radius: $mainBorderRadius;
 }
+
 .card-header, .card-header-big {
-    background-color: $primaryColor;
-    color: contrast($primaryColor);
-    border: 1px solid $primaryBorderColor;
+    background-color: map-get($bgColorMap, 'primary');
+    color: contrast(map-get($bgColorMap, 'primary'));
+    border: 1px solid map-get($borderColorMap, 'primary');
     padding: 0.5em;
 }
+
+// @each $name, $color in $bgColorMap {
+//     .card.card-#{name} {
+//         .card-header, .card-header-big {
+//             background-color: $color;
+//             color: contrast($color);
+//             border: 1px solid map-get($borderColorMap, $name);
+//             padding: 0.5em;
+//         }
+//     }
+// }
+
 .card-header h1, .card-header-big h1,
 .card-header h2, .card-header-big h2,
 .card-header h3, .card-header-big h3,
@@ -38,11 +51,11 @@
 }
 .card-section {
     padding: 1em;
-    border: 1px solid $defaultBorderColor;
+    border: 1px solid map-get($borderColorMap, 'default');
     border-top: none;
     background-color: $bgColor;
     overflow: hidden;
 }
 .card-section:first-of-type {
-    border-top: 1px solid $defaultBorderColor;
+    border-top: 1px solid map-get($borderColorMap, 'default');
 }

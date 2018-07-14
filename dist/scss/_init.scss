@@ -1,3 +1,5 @@
+// initial variables:
+
 $deviceVariants: (
     ('xs', 0, 100%),
     ('sm', 544px, 576px),
@@ -26,56 +28,43 @@ $mainBorderRadius:  2px;
 $hdrFontFamily:     inherit;
 $hdrFontWeight:     400;
 $hdrFontColor:      inherit;
-
 $isDark:            false;
 $bgColor:           #ffffff;
 $mainFontColor:     #555555;
 $contrastLight:     #ffffff;
 $contrastDark:      #000000;
-$primaryColor:      #0288D1;
-$successColor:      #00C853;
-$dangerColor:       #F44336;
+$bgColorMap: (
+    'default': if($isDark, lighten($bgColor, 5%), darken($bgColor, 3%)),
+    'primary': #0288D1,
+    'success': #00C853,
+    'danger':  #F44336,
+//  'warning': #FFA600,
+//  'info':    #33E1CC
+);
 
-$checkMarksColor: $successColor;
-@if $isDark {
-    $bgHoverColor: lighten($bgColor, 3%) !global;
-    $textInputColor: lighten($bgColor, 3%) !global;
-    $defaultColor: lighten($bgColor, 5%) !global;
+// derived variables:
 
-    $defaultBorderColor: lighten($bgColor, 10%) !global;
-    $primaryBorderColor: lighten($primaryColor, 10%) !global;
-    $successBorderColor: lighten($successColor, 10%) !global;
-    $dangerBorderColor: lighten($dangerColor, 10%) !global;
+$bgHoverColor: if($isDark, lighten($bgColor, 3%), darken($bgColor, 3%));
+$textInputColor: $bgHoverColor;
+$checkMarksColor: map-get($bgColorMap, 'success');
 
-    $defaultHoverColor: lighten($defaultColor, 5%) !global;
-    $primaryHoverColor: lighten($primaryColor, 5%) !global;
-    $successHoverColor: lighten($successColor, 5%) !global;
-    $dangerHoverColor: lighten($dangerColor, 5%) !global;
+$borderColorMap: ();
+$hoverColorMap:  ();
+$activeColorMap: ();
 
-    $defaultActiveColor: darken($defaultColor, 5%) !global;
-    $primaryActiveColor: darken($primaryColor, 5%) !global;
-    $successActiveColor: darken($successColor, 5%) !global;
-    $dangerActiveColor: darken($dangerColor, 5%) !global;
-} @else {
-    $bgHoverColor: darken($bgColor, 3%) !global;
-    $textInputColor: darken($bgColor, 3%) !global;
-    $defaultColor: darken($bgColor, 5%) !global;
-
-    $defaultBorderColor: darken($defaultColor, 10%) !global;
-    $primaryBorderColor: darken($primaryColor, 10%) !global;
-    $successBorderColor: darken($successColor, 10%) !global;
-    $dangerBorderColor: darken($dangerColor, 10%) !global;
-
-    $defaultHoverColor: darken($defaultColor, 5%) !global;
-    $primaryHoverColor: darken($primaryColor, 5%) !global;
-    $successHoverColor: darken($successColor, 5%) !global;
-    $dangerHoverColor: darken($dangerColor, 5%) !global;
-
-    $defaultActiveColor: lighten($defaultColor, 5%) !global;
-    $primaryActiveColor: lighten($primaryColor, 5%) !global;
-    $successActiveColor: lighten($successColor, 5%) !global;
-    $dangerActiveColor: lighten($dangerColor, 5%) !global;
+@each $colorName, $colorValue in $bgColorMap {
+    @if $isDark {
+        $borderColorMap: map-merge($borderColorMap, ($colorName: lighten($colorValue, 10%)));
+        $hoverColorMap: map-merge($hoverColorMap, ($colorName: lighten($colorValue, 5%)));
+        $activeColorMap: map-merge($activeColorMap, ($colorName: darken($colorValue, 5%)));
+    } @else {
+        $borderColorMap: map-merge($borderColorMap, ($colorName: darken($colorValue, 10%)));
+        $hoverColorMap: map-merge($hoverColorMap, ($colorName: darken($colorValue, 5%)));
+        $activeColorMap: map-merge($activeColorMap, ($colorName: lighten($colorValue, 5%)));
+    }
 }
+
+// required functions
 
 @function contrast($color) {
     $avg: (red($color) + green($color) + blue($color))/3;

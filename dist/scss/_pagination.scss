@@ -21,18 +21,18 @@
 }
 .pagination > li:first-child > *,
 .pagination > li:last-child > * {
-    border: 1px solid $defaultBorderColor;
-    background-color: $defaultColor;
+    border: 1px solid map-get($borderColorMap, 'default');
+    background-color: map-get($bgColorMap, 'default');
 }
 .pagination > li:first-child > *:hover,
 .pagination > li:last-child > *:hover {
-    background-color: $defaultHoverColor;
+    background-color: map-get($hoverColorMap, 'default');
 }
 .pagination > li.active > * {
-    background-color: $primaryColor;
-    border: 1px solid $primaryBorderColor;
-    color: contrast($primaryColor);
+    background-color: map-get($bgColorMap, 'primary');
+    border: 1px solid map-get($borderColorMap, 'primary');
+    color: contrast(map-get($bgColorMap, 'primary'));
 }
 .pagination > li.active > *:hover {
-    background-color: $primaryHoverColor;
+    background-color: map-get($hoverColorMap, 'primary');
 }
