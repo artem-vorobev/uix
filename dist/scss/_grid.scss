@@ -77,10 +77,10 @@ $n: 1;
     @media (min-width:#{$minWidth}) {
         @for $i from 1 through $columnNumber {
             .#{$selector}-#{$i}                     {width: 100%*$i/$columnNumber;}
-            .#{$selector}-#{$i}-move-r              {right: 100%*$i/$columnNumber;}
-            [dir="rtl"] .#{$selector}-#{$i}-move-r  {left: 100%*$i/$columnNumber;}
-            .#{$selector}-#{$i}-move-l              {left: 100%*$i/$columnNumber;}
-            [dir="rtl"] .#{$selector}-#{$i}-move-l  {right: 100%*$i/$columnNumber;}
+            .#{$selector}-#{$i}-move-r              {left: 100%*$i/$columnNumber;}
+            [dir="rtl"] .#{$selector}-#{$i}-move-r  {right: 100%*$i/$columnNumber;}
+            .#{$selector}-#{$i}-move-l              {right: 100%*$i/$columnNumber;}
+            [dir="rtl"] .#{$selector}-#{$i}-move-l  {left: 100%*$i/$columnNumber;}
             .#{$selector}-#{$i}-space-r             {margin-right: 100%*$i/$columnNumber;}
             [dir="rtl"] .#{$selector}-#{$i}-space-r {margin-left: 100%*$i/$columnNumber;}
             .#{$selector}-#{$i}-space-l             {margin-left: 100%*$i/$columnNumber;}
