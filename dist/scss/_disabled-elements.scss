@@ -1,11 +1,11 @@
-[disabled] > :not(legend) input[type="checkbox"] + span,
-[disabled] > :not(legend) input[type="radio"] + span,
-[disabled] > :not(legend) .form-control,
-[disabled] > :not(legend) .btn,
-[disabled] > input[type="checkbox"] + span,
-[disabled] > input[type="radio"] + span,
-[disabled] > .form-control,
-[disabled] > .btn,
+fieldset[disabled] > :not(legend) input[type="checkbox"] + span,
+fieldset[disabled] > :not(legend) input[type="radio"] + span,
+fieldset[disabled] > :not(legend) .form-control,
+fieldset[disabled] > :not(legend) .btn,
+fieldset[disabled] > input[type="checkbox"] + span,
+fieldset[disabled] > input[type="radio"] + span,
+fieldset[disabled] > .form-control,
+fieldset[disabled] > .btn,
 .btn[disabled],
 .form-control[disabled],
 input[disabled][type="checkbox"] + span,
@@ -17,11 +17,11 @@ input[disabled][type="radio"] + span
     background-color: $bgColor !important;
     cursor: default !important;
 }
-[disabled] > :not(legend) input[type="checkbox"]:checked + span,
+fieldset[disabled] > :not(legend) input[type="checkbox"]:checked + span,
 input[disabled][type="checkbox"]:checked + span {
     @include icon-checkbox-checkmark(map-get($borderColorMap, 'default'));
 }
-[disabled] > :not(legend) input[type="radio"]:checked + span,
+fieldset[disabled] > :not(legend) input[type="radio"]:checked + span,
 input[disabled][type="radio"]:checked + span {
     @include icon-radio-checkmark(map-get($borderColorMap, 'default'));
 }

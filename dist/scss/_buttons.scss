@@ -21,10 +21,6 @@ a.btn:hover {
 @media (max-width: 991px) {
     .btn {min-width: 2.5em;}
 }
-.cell > .btn:only-child {
-    display: block;
-    width: 100%;
-}
 .btn-square {
     width: 2.5em;
     min-width: auto;

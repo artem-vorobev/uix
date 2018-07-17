@@ -32,7 +32,7 @@ $isDark:            false;
 $bgColor:           #ffffff;
 $mainFontColor:     #555555;
 $contrastLight:     #ffffff;
-$contrastDark:      #000000;
+$contrastDark:      #555555;
 $bgColorMap: (
     'default': if($isDark, lighten($bgColor, 5%), darken($bgColor, 3%)),
     'primary': #0288D1,

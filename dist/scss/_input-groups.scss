@@ -1,15 +1,10 @@
-.input-group, .one-line-form {
+.input-group {
     display: flex;
     flex-flow: row nowrap;
 }
 .input-group.inline {
     display: inline-flex;
     vertical-align: middle;
-}
-.one-line-form > label {
-    display:inline-block;
-    line-height: 2.5em;
-    white-space: nowrap;
 }
 .input-group > .text-label {
     display:inline-block;
@@ -22,12 +17,6 @@
     border-radius: 0;
     margin-right: -1px;
 }
-.one-line-form > * {
-    margin-right: 0.5rem;
-}
-.one-line-form > *:last-child {
-    margin-right: 0;
-}
 .input-group > *:first-child {
     border-radius: $mainBorderRadius 0 0 $mainBorderRadius;
 }
@@ -38,21 +27,58 @@
     width: auto;
     flex-grow: 1;
 }
-.input-table > .input-group {
-    margin-bottom: -1px;
+
+
+
+
+// .input-table > .input-group {
+//     margin-bottom: -1px;
+// }
+// .input-table > .input-group > * {
+//     border-radius: 0;
+// }
+// .input-table > .input-group:first-child > *:first-child {
+//     border-top-left-radius: $mainBorderRadius;
+// }
+// .input-table > .input-group:first-child > *:last-child {
+//     border-top-right-radius: $mainBorderRadius;
+// }
+// .input-table > .input-group:last-child > *:first-child {
+//     border-bottom-left-radius: $mainBorderRadius;
+// }
+// .input-table > .input-group:last-child > *:last-child {
+//     border-bottom-right-radius: $mainBorderRadius;
+// }
+
+
+
+@media (min-width: 768px) {
+    .one-line-form {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .one-line-form > label {
+        display:inline-block;
+        line-height: 2.5em;
+        white-space: nowrap;
+    }
+    .one-line-form > * {
+        margin-right: 0.5rem;
+    }
+    .one-line-form > *:last-child {
+        margin-right: 0;
+    }
 }
-.input-table > .input-group > * {
-    border-radius: 0;
-}
-.input-table > .input-group:first-child > *:first-child {
-    border-top-left-radius: $mainBorderRadius;
-}
-.input-table > .input-group:first-child > *:last-child {
-    border-top-right-radius: $mainBorderRadius;
-}
-.input-table > .input-group:last-child > *:first-child {
-    border-bottom-left-radius: $mainBorderRadius;
-}
-.input-table > .input-group:last-child > *:last-child {
-    border-bottom-right-radius: $mainBorderRadius;
+
+@media (max-width: 767px) {
+   .one-line-form {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .one-line-form > * {
+        margin-bottom: 0.5rem;
+    }
+    .one-line-form > *:last-child {
+        margin-bottom: 0;
+    } 
 }
