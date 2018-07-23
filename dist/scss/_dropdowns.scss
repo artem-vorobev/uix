@@ -4,8 +4,6 @@
     font-weight: normal;
     font-family: $mainFontFamily;
     text-transform: none;
-}
-ul.dropdown {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -16,7 +14,7 @@ ul.dropdown {
     color: $mainFontColor;
     text-align: left;
 }
-[dir="rtl"] ul.dropdown {
+[dir="rtl"] .dropdown {
     text-align: right;
 }
 ul.dropdown > li {

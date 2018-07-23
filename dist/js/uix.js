@@ -1,6 +1,6 @@
 /**
  * Uix frontend framework. Javascript functions
- * Version: 1.1.3, last update 23.07.2018
+ * Version: 1.1.4, last update 23.07.2018
  * Author: Artem Vorobev <artem.v.mailbox@gmail.com>
  */
 if (!('Uix' in window)) window.Uix = {}; (function() { "use strict";
