@@ -1,6 +1,6 @@
 /**
  * Uix frontend framework. Javascript functions
- * Version: 1.1.2, last update 17.07.2018
+ * Version: 1.1.3, last update 23.07.2018
  * Author: Artem Vorobev <artem.v.mailbox@gmail.com>
  */
 if (!('Uix' in window)) window.Uix = {}; (function() { "use strict";
@@ -60,9 +60,14 @@ function expandHeight(params, then)
         duration = params.duration,
         savedCss = target.style.cssText;
 
-    if (target.offsetHeight > 0) return;
-
+    var skipAnimation = false;
+    if (target.offsetHeight > 0) skipAnimation = true;
     target.classList.remove(hidingClass);
+    if (target.offsetHeight == 0) skipAnimation = true;
+    if (skipAnimation) {
+        if (typeof then == 'function') then();
+        return;
+    }
 
     var cs = getComputedStyle(target),
         start = {
@@ -110,7 +115,16 @@ function collapseHeight(params, then)
         duration = params.duration,
         savedCss = target.style.cssText;
 
-    if (target.offsetHeight == 0) return;
+    var skipAnimation = false;
+    if (target.offsetHeight == 0) skipAnimation = true;
+    target.classList.add(hidingClass);
+    if (target.offsetHeight > 0) skipAnimation = true;
+    if (skipAnimation) {
+        if (typeof then == 'function') then();
+        return;
+    }
+
+    target.classList.remove(hidingClass);
 
     var cs = getComputedStyle(target),
         start = {
@@ -205,9 +219,14 @@ function expandWidth(params, then)
         duration = params.duration,
         savedCss = target.style.cssText;
 
-    if (target.offsetWidth > 0) return;
-
+    var skipAnimation = false;
+    if (target.offsetWidth > 0) skipAnimation = true;
     target.classList.remove(hidingClass);
+    if (target.offsetWidth == 0) skipAnimation = true;
+    if (skipAnimation) {
+        if (typeof then == 'function') then();
+        return;
+    }
 
     var cs = getComputedStyle(target),
         start = {
@@ -256,7 +275,16 @@ function collapseWidth(params, then)
         duration = params.duration,
         savedCss = target.style.cssText;
 
-    if (target.offsetWidth == 0) return;
+    var skipAnimation = false;
+    if (target.offsetWidth == 0) skipAnimation = true;
+    target.classList.add(hidingClass);
+    if (target.offsetWidth > 0) skipAnimation = true;
+    if (skipAnimation) {
+        if (typeof then == 'function') then();
+        return;
+    }
+
+    target.classList.remove(hidingClass);
 
     var cs = getComputedStyle(target),
         start = {
@@ -353,9 +381,14 @@ function appear(params, then)
         animation = params.animation,
         savedCss = target.style.cssText;
 
-    if (target.offsetWidth > 0 || target.offsetHeight > 0) return;
-
+    var skipAnimation = false;
+    if (target.offsetWidth > 0 && target.offsetHeight > 0) skipAnimation = true;
     target.classList.remove(hidingClass);
+    if (target.offsetWidth == 0 || target.offsetHeight == 0) skipAnimation = true;
+    if (skipAnimation) {
+        if (typeof then == 'function') then();
+        return;
+    }
 
     switch (animation.toLowerCase()) {
         case 'top-to-bottom':
@@ -408,8 +441,16 @@ function disappear(params, then)
         animation = params.animation,
         savedCss = target.style.cssText;
 
-    if (target.offsetWidth == 0 && target.offsetHeight == 0) return;
+    var skipAnimation = false;
+    if (target.offsetWidth == 0 || target.offsetHeight == 0) skipAnimation = true;
+    target.classList.add(hidingClass);
+    if (target.offsetWidth > 0 && target.offsetHeight > 0) skipAnimation = true;
+    if (skipAnimation) {
+        if (typeof then == 'function') then();
+        return;
+    }
 
+    target.classList.remove(hidingClass);
     target.style.transition = 'transform '+duration+'ms ease-in-out, opacity '+duration+'ms ease-in-out';
     forceRedraw(target);
 
@@ -533,9 +574,14 @@ function drop(params, then)
         source = params.source,
         savedCss = target.style.cssText;
 
-    if (target.offsetWidth > 0 || target.offsetHeight > 0) return;
-
+    var skipAnimation = false;
+    if (target.offsetWidth > 0 && target.offsetHeight > 0) skipAnimation = true;
     target.classList.remove(hidingClass);
+    if (target.offsetWidth == 0 || target.offsetHeight == 0) skipAnimation = true;
+    if (skipAnimation) {
+        if (typeof then == 'function') then();
+        return;
+    }
 
     if (getComputedStyle(target).position != 'fixed') {
         target.style.setProperty('position', 'fixed', 'important');
