@@ -16,6 +16,7 @@
 .input-group > * {
     border-radius: 0;
     margin-right: -1px;
+    flex-shrink: 0;
 }
 .input-group > *:first-child {
     border-radius: $mainBorderRadius 0 0 $mainBorderRadius;
@@ -24,8 +25,9 @@
     border-radius: 0 $mainBorderRadius $mainBorderRadius 0;
 }
 .input-group > .form-control {
-    width: auto;
+    flex-basis: 0;
     flex-grow: 1;
+    flex-shrink: 1;
 }
 
 

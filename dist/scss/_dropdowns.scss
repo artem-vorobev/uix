@@ -23,15 +23,15 @@ ul.dropdown > li {
     cursor: pointer;
     white-space: nowrap;
 }
-ul.dropdown > li > .fa {
+ul.dropdown > li > i {
     color: map-get($bgColorMap, 'primary');
     display: inline-block;
     width: 2em;
 }
 ul.dropdown > li[disabled],
 ul.dropdown > li.disabled,
-ul.dropdown > li[disabled] > .fa,
-ul.dropdown > li.disabled > .fa {
+ul.dropdown > li[disabled] > i,
+ul.dropdown > li.disabled > i {
     color: map-get($borderColorMap, 'default');
     cursor: default;
 }
